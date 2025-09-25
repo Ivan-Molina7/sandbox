@@ -1,0 +1,1107 @@
+@use "animations";
+@use "buttons";
+@use "fonts";
+@use "spacing";
+@use "utils";
+@use "sass:map";
+@use "colors";
+
+.hero {
+    @include utils.flex-layout(center, center, column);
+    gap: map.get($map: spacing.$spacing, $key: 64px);
+    margin-top: map.get($map: spacing.$spacing, $key: 32px);
+
+    .wrapper {
+        @include spacing.layout-responsive();
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+
+
+        .wrapper--2 {
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 70px);
+        }
+    }
+
+    &__content {
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+
+        .hero__image {
+            width: 100%;
+        }
+
+        .hero__texts {
+
+            .hero__title {
+                color: #343F52;
+                @include fonts.font-responsive("title-1");
+                text-align: center;
+
+                span {
+                    color: colors.$main-color;
+                }
+            }
+
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+        }
+    }
+
+    &__subtitle {
+        color: colors.$text-color;
+        @include fonts.font-responsive("subtitle");
+        text-align: center;
+    }
+
+
+    &__brands {
+        width: 100%;
+
+        @include utils.flex-layout(center, center, row);
+        flex-wrap: wrap;
+        gap: map.get($map: spacing.$spacing, $key: 20px);
+
+        .hero__brand {
+            max-width: 120px;
+        }
+    }
+
+    &__wave{
+        object-fit: cover;
+    }
+
+}
+
+.what-we-do {
+    margin-top: -1px;
+    background: linear-gradient(to bottom, #F0F8FE 50%, #FEFEFE 100%);
+
+    @include spacing.layout-responsive();
+    @include utils.flex-layout(center, center, column);
+    gap: map.get($map: spacing.$spacing, $key: 32px);
+
+
+    &__cards {
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+
+        .what-we-do__card {
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+
+            &-thubmnail {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &-content {
+                @include utils.flex-layout(center, center, column);
+                gap: map.get($map: spacing.$spacing, $key: 16px);
+                text-align: center;
+
+                .what-we-do__card-title {
+                    color: colors.$title-color;
+                    @include fonts.font-responsive("subtitle");
+                }
+
+                .what-we-do__card-text {
+                    color: colors.$text-color;
+                    @include fonts.font-responsive("text-base");
+
+                }
+
+                .what-we-do__card-link {
+                    color: colors.$main-color;
+                    font-weight: 17px;
+                    text-decoration: none;
+                    font-weight: 600;
+
+                }
+            }
+        }
+    }
+}
+
+.our-strategy {
+    background-color: #FEFEFE;
+
+    @include spacing.layout-responsive();
+    @include utils.flex-layout(center, center, column);
+    gap: map.get($map: spacing.$spacing, $key: 48px);
+
+    .wrapper {
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+    }
+
+
+    &__titles {
+        width: 100%;
+    }
+
+    &__title-description {
+        @include utils.flex-layout(flex-start, flex-start, column);
+        text-align: left;
+        gap: map.get($map: spacing.$spacing, $key: 24px);
+
+        p {
+            @include fonts.font-responsive("text-base");
+        }
+    }
+
+    &__cards {
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+
+
+        .our-strategy__card {
+            border-radius: 8px;
+            @include utils.flex-layout(center, center, row);
+            gap: map.get($map: spacing.$spacing, $key: 16px);
+            padding: map.get($map: spacing.$spacing, $key: 32px);
+            ;
+            background-color: #fff;
+            box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+
+            .our-strategy__number {
+                width: 60px;
+                min-width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #E5F4FD;
+                @include utils.flex-layout(center, center, column);
+                color: colors.$main-color;
+                @include fonts.font-responsive("subtitle");
+            }
+
+            &-content {
+                @include utils.flex-layout(flex-start, flex-start, column);
+                gap: map.get($map: spacing.$spacing, $key: 8px);
+
+
+                .our-strategy__card-text {
+                    @include fonts.font-responsive("text-base");
+                }
+            }
+        }
+
+    }
+
+
+
+}
+
+.why-choose {
+    background: linear-gradient(to bottom, #FEFEFE 30%, #F0F8FE 100%);
+    @include utils.flex-layout(center, center, column);
+    gap: map.get($map: spacing.$spacing, $key: 120px);
+
+
+    .wrapper {
+        width: 100%;
+        @include spacing.layout-responsive();
+        @include utils.flex-layout(flex-start, flex-start, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+
+        .wrapper--2 {
+            @include utils.flex-layout(flex-start, flex-start, column);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+        }
+
+    }
+
+    &__thumbnail {
+        display: none;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    //     &__faq {
+    //         list-style: none;
+    //         @include utils.flex-layout(center, center, column);
+    //         gap: map.get($map: spacing.$spacing, $key: 16px);
+
+    //          .why-choose__item{
+    //             @include utils.flex-layout(center, flex-start, column);
+
+
+
+    //             &-pregunta{
+    //                 @include utils.flex-layout(flex-start, center, row);
+    //                 gap: map.get($map: spacing.$spacing, $key: 12px);   
+    //                 width: 100%;
+    //                 cursor: pointer;
+
+
+    //                 padding: 16px 12px;
+    //                 border-radius: 8px;
+
+    //                 p{
+    //                               color: colors.$main-color;
+    //                     @include fonts.font-responsive("subtitle-xs");
+    //                 }
+    //             }
+
+    //             &-respuesta{
+    //                 color: #60697B;
+    //                 @include fonts.font-responsive("text-base");
+    //                 padding-left: 52px;
+
+    //                 // margin-top: 0;
+    //                 // max-height: 0;
+    //                 // overflow: hidden;
+    //                 // transition: all 0.2s ease-in-out;
+
+    //             }
+
+    //             &-icon{
+    //                 width: 24px;
+    //                 height: 24px;
+
+    //                 cursor: pointer;
+
+    //                 img{
+    //                     width: 100%;
+    //                     height: 100%;
+    //                     object-fit: contain;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+.company-facts {
+    gap: map.get($map: spacing.$spacing, $key: 64px);
+    @include utils.flex-layout(center, center, column);
+    user-select: none;
+
+    .wrapper--facts {
+        @include spacing.layout-responsive();
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 64px);
+
+        .wrapper {
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+        }
+    }
+
+    .company-facts__content {
+        @include utils.flex-layout(center, flex-start, column);
+        gap: map.get($map: spacing.$spacing, $key: 24px);
+    }
+
+    .company-facts__items {
+        @include utils.flex-layout(center, center, row);
+        gap: map.get($map: spacing.$spacing, $key: 24px) map.get($map: spacing.$spacing, $key: 12px);
+        flex-wrap: wrap;
+
+        .company-facts__item {
+            width: 100%;
+            max-width: 158px;
+
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 20px);
+
+            &-thumbnail {
+                width: 60px;
+                height: 60px;
+                background-color: #E5F4FD;
+                border-radius: 50%;
+                @include utils.flex-layout(center, center, column);
+
+                .company-facts__item-image {
+                    z-index: 200;
+                }
+            }
+
+            &-content {
+                @include utils.flex-layout(center, center, column);
+                gap: map.get($map: spacing.$spacing, $key: 8px);
+
+                .company-facts__item-title {
+                    color: colors.$title-color;
+                    @include fonts.font-responsive("title-2");
+                }
+            }
+        }
+    }
+
+    .company-facts__cards {
+        @include utils.flex-layout(center, center, row);
+        gap: map.get($map: spacing.$spacing, $key: 16px) map.get($map: spacing.$spacing, $key: 12px);
+        flex-wrap: wrap;
+
+        .company-facts__card {
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            width: 100%;
+            max-width: 158px;
+            padding: 24px 0;
+            border-radius: 8px;
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 20px);
+
+
+            &-thumbnail {
+                width: 100px;
+                height: 100%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            &-content {
+                text-align: center;
+                @include utils.flex-layout(center, center, column);
+                gap: map.get($map: spacing.$spacing, $key: 8px);
+
+                .company-facts__card-name {
+                    color: colors.$title-color;
+                    @include fonts.font-responsive("subtitle");
+                }
+
+                .company-facts__card-job {
+                    color: #AAB0BC;
+                    @include fonts.font-responsive("text-base");
+                }
+
+                .company-facts__card-text {
+                    display: none
+                }
+
+                .company-facts__card-socials {
+                    margin-top: 8px;
+                    @include utils.flex-layout(center, center, row);
+                    gap: map.get($map: spacing.$spacing, $key: 12px);
+                }
+            }
+        }
+    }
+
+
+    .projects {
+        @include spacing.layout-responsive();
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+
+        .projects__slider {
+            @include utils.flex-layout(center, center, row);
+            gap: map.get($map: spacing.$spacing, $key: 16px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects__card {
+            @include utils.flex-layout(center, flex-start, column);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+           transition: opacity 0.5s ease, transform 0.5s ease;
+         
+           flex: 1 1 calc(50% - 8px) !important;
+
+
+            &-thumbnail {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+
+        }
+
+        .projects__card.active {
+            opacity: 1;
+
+        }
+
+        .projects__card:nth-child(2) {
+            display: none;
+        }
+
+
+        &__arrows {
+            @include utils.flex-layout(center, center, row);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+
+            a {
+                width: 40px;
+                height: 40px;
+                background-color: colors.$main-color;
+                padding: map.get($map: spacing.$spacing, $key: 12px);
+                border-radius: 50%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.customers {
+
+    background: linear-gradient(to bottom, #F0F8FE 50%, #fff 100%);
+
+    @include spacing.layout-responsive();
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+    }
+
+    &__cards {
+        // @include utils.flex-layout(center, center, column);
+
+
+        .customers__card {
+            margin: 6px;
+            width: 100%;
+            @include utils.flex-layout(flex-start, flex-start, column);
+            gap: map.get($map: spacing.$spacing, $key: 8px);
+            padding: map.get($map: spacing.$spacing, $key: 40px);
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: rgba(149, 157, 165, 0.233) 0px 4px 18px;
+
+            &-content {
+                @include utils.flex-layout(center, center, column);
+                gap: map.get($map: spacing.$spacing, $key: 40px);
+
+
+                .customers__profile {
+                    width: 100%;
+                    @include utils.flex-layout(flex-start, center, row);
+                    gap: map.get($map: spacing.$spacing, $key: 24px);
+
+                    img {
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
+                    }
+
+                    &-content {
+                        @include utils.flex-layout(center, flex-start, column);
+                        gap: map.get($map: spacing.$spacing, $key: 8px);
+
+                        .customers__profile-name {
+                            color: colors.$title-color;
+                            @include fonts.font-responsive("subtitle");
+                        }
+
+                        .customers__profile-job {
+                            color: #AAB0BC;
+                            @include fonts.font-responsive("text-base");
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.faq-section {
+
+    background-color: #FEFEFE;
+    @include utils.flex-layout(center, center, column);
+    gap: map.get($map: spacing.$spacing, $key: 64px);
+
+    .wrapper--faq {
+
+        @include spacing.layout-responsive();
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+
+        .wrapper {
+            @include utils.flex-layout(flex-start, flex-start, column);
+            gap: map.get($map: spacing.$spacing, $key: 16px);
+        }
+    }
+
+    &__text {
+
+
+        @include fonts.font-responsive("text-base");
+    }
+
+
+}
+
+.faq-section__list {
+    @include utils.flex-layout(center, center, column);
+    gap: map.get($map: spacing.$spacing, $key: 16px);
+
+
+   .faq-section__item {
+        transition: all .3s ease;
+        @include utils.flex-layout(center, flex-start, column);
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border-radius: 8px;
+        width: 100%;
+
+
+        &-pregunta {
+
+            @include utils.flex-layout(flex-start, center, row);
+            gap: map.get($map: spacing.$spacing, $key: 12px);
+            width: 100%;
+            cursor: pointer;
+            background-color: #Fff;
+            padding: 16px 12px;
+            border-radius: 8px;
+            height: 65px;
+
+            p {
+                transition: all .3s ease;
+                color: colors.$title-color;
+                @include fonts.font-responsive("subtitle-xs");
+            }
+        }
+
+
+
+        &-pregunta--abierta {
+            color: colors.$main-color !important;
+        }
+
+        &-respuesta {
+            color: #1a408b;
+            @include fonts.font-responsive("text-base");
+            padding-left: 52px;
+            opacity: 0;
+            margin-top: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.2s ease-in-out;
+
+        }
+
+        &-respuesta--abierta {
+            max-height: 200px;
+            opacity: 1;
+            padding: 0px 12px 12px 52px;
+        }
+
+
+        &-icon {
+            width: 24px;
+            height: 24px;
+            @include utils.flex-layout(center, center, column);
+            font-size: 16px;
+
+            cursor: pointer;
+            color: colors.$main-color;
+            transition: all .3s ease;
+
+        }
+
+        &-icon--abierta {
+            transform: rotate(-180deg);
+
+        }
+    }
+
+    .faq-section__item--why-choose {
+        box-shadow: none !important;
+    
+
+          .faq-section__item-pregunta {
+            background-color: rgba(255, 0, 0, 0);
+        }
+    }
+
+}
+
+
+
+/*Rango mobile EXCLUSIVO*/
+@media screen and (max-width: 767px) {}
+
+
+/*Rango tablet EXCLUSIVO*/
+@media screen and (min-width: 768px) and (max-width:1023px) {}
+
+/*Rango Tablet INCLUSIVO*/
+
+@media screen and (min-width: 768px) {
+
+    .what-we-do {
+
+        &__cards {
+            @include utils.flex-layout(center, center, row);
+            gap: 32px map.get($map: spacing.$spacing, $key: 16px);
+            flex-wrap: wrap;
+
+            .what-we-do__card {
+                max-width: 344px;
+                flex: 1 1 calc(50% - 8px);
+            }
+        }
+    }
+
+
+    .our-strategy {
+
+
+        &__cards {
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+            width: 80%;
+
+
+            .our-strategy__card {
+                width: 100%;
+                @include utils.flex-layout(flex-start, center, row);
+            }
+
+        }
+
+
+        &__card:nth-child(2) {
+            margin-right: -100px;
+        }
+
+
+
+    }
+
+    .why-choose {
+        @include utils.flex-layout(flex-start, flex-start, column);
+
+        &__faq {
+            max-width: 500px;
+
+        }
+
+
+    }
+
+    .company-facts {
+        gap: map.get($map: spacing.$spacing, $key: 120px);
+        @include utils.flex-layout(flex-start, flex-start, column);
+
+        .wrapper--facts {
+            width: 100%;
+            @include utils.flex-layout(flex-start, flex-start, column);
+
+            .wrapper {
+                width: 100%;
+                @include utils.flex-layout(flex-start, flex-start, column);
+
+            }
+        }
+
+        .company-facts__content {
+            p {
+                max-width: 340px
+            }
+        }
+
+        .company-facts__items {
+            @include utils.flex-layout(center, center, row);
+            gap: map.get($map: spacing.$spacing, $key: 24px) map.get($map: spacing.$spacing, $key: 12px);
+            flex-wrap: wrap;
+            width: 100%;
+
+            .company-facts__item {
+                flex: 1 1 0;
+                max-width: none;
+
+            }
+        }
+
+        .company-facts__cards {
+            width: 100%;
+
+            .company-facts__card {
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                width: 100%;
+                max-width: 344px;
+                padding: 40px;
+                border-radius: 8px;
+                @include utils.flex-layout(center, center, column);
+                gap: map.get($map: spacing.$spacing, $key: 20px);
+
+
+                &-content {
+                    text-align: center;
+                    @include utils.flex-layout(center, center, column);
+                    gap: map.get($map: spacing.$spacing, $key: 8px);
+
+                    .company-facts__card-text {
+                        display: block
+                    }
+
+
+                }
+            }
+        }
+
+
+
+        .projects {
+
+            .projects__titles {
+                text-align: center
+            }
+
+                       .projects__card:nth-child(2) {
+                    display: flex;
+                }
+                    
+            &__arrows {
+                @include utils.flex-layout(center, center, row);
+                gap: map.get($map: spacing.$spacing, $key: 32px);
+
+                a {
+                    width: 40px;
+                    height: 40px;
+                    background-color: colors.$main-color;
+                    padding: map.get($map: spacing.$spacing, $key: 12px);
+                    border-radius: 50%;
+
+                    img {
+                        width: 90%;
+                        height: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    .customers {
+
+        &__titles {
+            text-align: center
+        }
+
+        &__cards {
+
+
+            .customers__card {
+                @include utils.flex-layout(flex-start, flex-start, column);
+                gap: map.get($map: spacing.$spacing, $key: 8px);
+                padding: map.get($map: spacing.$spacing, $key: 40px);
+                background-color: #fff;
+
+                &-content {
+                    @include utils.flex-layout(center, center, column);
+                    gap: map.get($map: spacing.$spacing, $key: 40px);
+
+
+
+
+                }
+            }
+        }
+    }
+
+    .faq-section {
+        background-color: #FEFEFE;
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 120px);
+
+    }
+
+
+}
+
+
+/*Rango Desktop INCLUSIVO*/
+
+@media screen and (min-width: 1024px) {
+
+    .hero {
+        @include utils.flex-layout(center, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 64px);
+        margin-top: map.get($map: spacing.$spacing, $key: 32px);
+
+        .wrapper {
+            @include spacing.layout-responsive();
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+
+
+            .wrapper {
+                @include utils.flex-layout(center, fle, column);
+                gap: map.get($map: spacing.$spacing, $key: 70px);
+
+                >p {
+                    @include fonts.font-responsive("text");
+                    text-align: center;
+                }
+            }
+        }
+
+        &__content {
+            @include utils.flex-layout(center, center, row);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+
+
+            .hero__thumbnail {
+                order: 2;
+                flex: 1 1 60%; // o flex: 1 1 60%
+                max-width: 100%; // limita el ancho al contenedor flex
+                display: flex; // para controlar la imagen internamente
+                justify-content: center; // opcional, para centrar imagen
+                align-items: flex-start;
+            }
+
+            .hero__image {
+                width: 100%; // que la imagen ocupe todo el ancho disponible
+                height: auto; // que mantenga proporción
+                object-fit: contain; // para mantener proporción si la imagen es más grande
+            }
+
+            .hero__texts {
+                order: 1;
+                flex: 1 1 calc(40% - 16px);
+                align-items: flex-start !important;
+
+
+
+                .hero__title {
+                    color: #343F52;
+                    @include fonts.font-responsive("title-1");
+                    text-align: left;
+
+
+                    span {
+                        color: colors.$main-color;
+                    }
+                }
+
+                @include utils.flex-layout(center, center, column);
+                gap: map.get($map: spacing.$spacing, $key: 32px);
+            }
+        }
+
+        &__subtitle {
+            color: colors.$text-color;
+            text-align: left;
+            @include fonts.font-responsive("subtitle");
+
+        }
+
+
+        &__brands {
+            width: 100%;
+
+            @include utils.flex-layout(center, center, row);
+            flex-wrap: wrap;
+            gap: map.get($map: spacing.$spacing, $key: 20px);
+
+            .hero__brand {
+                max-width: 120px;
+            }
+        }
+
+
+
+    }
+
+    .what-we-do {
+        gap: map.get($map: spacing.$spacing, $key: 40px);
+
+        &__titles {
+            text-align: center;
+        }
+
+        &__cards {
+            gap: map.get($map: spacing.$spacing, $key: 70px);
+        }
+    }
+
+
+
+    .our-strategy {
+        @include utils.flex-layout(center, center, row);
+
+        .wrapper {
+            flex: 1 1 50%;
+            align-items: flex-start;
+        }
+
+        &__cards {
+
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+            flex: 1 1 50%;
+
+            .our-strategy__card {
+                max-width: 560px;
+                @include utils.flex-layout(flex-start, center, row);
+                box-shadow: rgba(149, 157, 165, 0.164) 0px 10px 32px;
+
+            }
+
+        }
+
+    }
+
+    .why-choose {
+
+
+
+        .wrapper {
+
+            @include utils.flex-layout(center, flex-start, row);
+
+            .wrapper--2 {
+                order: 2;
+
+                flex: 1 1 45%;
+                height: 577px;
+            }
+
+        }
+
+        &__titles {
+            max-width: 400px;
+        }
+
+        &__thumbnail {
+            flex: 1 1 55%;
+            display: block;
+        }
+    }
+
+
+    .company-facts {
+        gap: map.get($map: spacing.$spacing, $key: 120px);
+
+        .wrapper--facts {
+
+            .wrapper {
+                @include utils.flex-layout(center, center, row);
+                gap: 0;
+            }
+        }
+
+        .company-facts__items {
+            gap: 0;
+            justify-content: space-around;
+
+            .company-facts__item {
+                max-width: 200px;
+            }
+
+        }
+
+        .company-facts__cards {
+            @include utils.flex-layout(space-center, center, row);
+
+
+            .company-facts__card {
+
+                max-width: 285px;
+
+
+                &-content {
+
+                    .company-facts__card-text {
+                        display: block
+                    }
+
+
+                }
+            }
+        }
+
+        .projects {
+
+            .projects__slider {
+                @include utils.flex-layout(center, center, row);
+                gap: map.get($map: spacing.$spacing, $key: 16px);
+           
+            }
+
+         
+
+            &__arrows {
+                @include utils.flex-layout(center, center, row);
+                gap: map.get($map: spacing.$spacing, $key: 32px);
+
+                a {
+                    width: 40px;
+                    height: 40px;
+                    background-color: colors.$main-color;
+                    padding: map.get($map: spacing.$spacing, $key: 12px);
+                    border-radius: 50%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .faq-section {
+
+        gap: map.get($map: spacing.$spacing, $key: 120px);
+
+        .wrapper--faq {
+            @include utils.flex-layout(center, flex-start, row);
+            gap: map.get($map: spacing.$spacing, $key: 70px);
+            height: 440px;
+
+            .wrapper {
+
+                gap: map.get($map: spacing.$spacing, $key: 32px);
+            }
+        }
+
+        &__text {
+
+            @include fonts.font-responsive("text-base");
+        }
+
+
+        .faq-section__list {
+
+            gap: map.get($map: spacing.$spacing, $key: 24px);
+        }
+    }
+
+
+
+}
+
+/*Rango Desktop EXCLUSIVO*/
+@media screen and (min-width: 1024px) and (max-width:1247px) {}
+
+/*Rango desktop xl INCLUSIVO*/
+@media screen and (min-width: 1248px) {
+    .company-facts {
+
+
+        .company-facts__cards {
+            @include utils.flex-layout(space-between, center, row);
+
+
+        }
+
+
+    }
+
+
+}

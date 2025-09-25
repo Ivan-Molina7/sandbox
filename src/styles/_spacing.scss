@@ -1,0 +1,40 @@
+// Espaciados generales
+$spacing: (
+  120px: 120px,
+  70px: 70px,
+  64px: 64px,
+  48px: 48px,
+  40px: 40px,
+  32px: 32px,
+  24px: 24px,
+  20px: 20px,
+  16px: 16px,
+  12px: 12px,
+  8px: 8px,
+  4px: 4px
+);
+
+
+// Padding laterales
+$padding-mobile: 16px;
+$padding-tablet: 32px;
+
+
+@mixin layout-responsive() {
+  // Mobile
+  padding-left: $padding-mobile;
+  padding-right: $padding-mobile;
+
+  // Tablet
+  @media screen and (min-width: 768px) and (max-width: 1247px) {
+    padding-left: $padding-tablet;
+    padding-right: $padding-tablet;
+  }
+
+
+  // Desktop (1024px en adelante)
+  @media screen and (min-width: 1248px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

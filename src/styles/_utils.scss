@@ -1,0 +1,93 @@
+@use "fonts";
+@use "spacing";
+
+@use "colors";
+
+
+@mixin flex-layout($justify: flex-start, $align: stretch, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+
+
+
+.max-width-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*Sections*/
+
+
+.title-section {
+    @include fonts.font-responsive("title-2");
+    color: colors.$title-color;
+}
+
+.subtitle-tag {
+    color: colors.$main-color;
+    @include fonts.font-responsive("text-base");
+    font-weight: 600 !important;
+    line-height: 21px;
+    letter-spacing: .4px;
+    padding-bottom: 16px
+}
+
+.subtitle {
+    color: colors.$title-color;
+    @include fonts.font-responsive("subtitle");
+}
+
+
+.overlay-wave__image {
+    width: 100%;
+    height: 130px;
+}
+
+.pb-responsive{
+    padding-bottom: 64px;
+}
+
+
+
+
+/*Rango mobile EXCLUSIVO*/
+@media screen and (max-width: 767px) {}
+
+
+/*Rango tablet EXCLUSIVO*/
+@media screen and (min-width: 768px) and (max-width:1023px) {
+
+
+}
+
+/*Rango Tablet INCLUSIVO*/
+
+@media screen and (min-width: 768px) {
+    .pb-responsive{
+        padding-bottom: 120px;
+    }
+
+}
+
+
+/*Rango Desktop INCLUSIVO*/
+@media screen and (min-width: 1024px) {
+
+    
+}
+
+/*Rango Desktop EXCLUSIVO*/
+@media screen and (min-width: 1024px) and (max-width:1247px) {
+
+
+}
+/*Rango desktop xl INCLUSIVO*/
+@media screen and (min-width: 1248px) {
+
+}
+

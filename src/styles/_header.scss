@@ -1,0 +1,174 @@
+@use "animations";
+@use "buttons";
+@use "fonts";
+@use "spacing";
+@use "utils";
+@use "sass:map";
+@use "colors";
+
+.header {
+    position: sticky;
+     backdrop-filter: blur(5px); // desenfoque para efecto vidrio
+      -webkit-backdrop-filter: blur(10px); // soporte para Safari
+    top: 0px;
+    width: 100%;
+    height: 84px;
+    z-index: 500;
+    @include utils.flex-layout(space-between, center, row);
+    @include spacing.layout-responsive();
+            box-shadow:  0 0 10px rgba(12, 155, 212, 0.11);
+
+
+
+    &__thumbnail {
+
+        .header__logo {
+            width: 100px;
+        }
+
+    }
+
+    .nav {
+        background:#ACE1FF; // color principal con opacidad baja
+        backdrop-filter: blur(10px); // desenfoque para efecto vidrio
+        -webkit-backdrop-filter: blur(10px); // soporte para Safari
+        border: 1px solid rgba(25, 153, 233, 0); // borde sutil con color principal semi-transparente
+
+        /* Opcional: sombra interna para más profundidad */
+        box-shadow: inset 0 0 10px rgba(12, 155, 212, 0.185);
+
+
+
+
+        position: fixed;
+        top: 70px;
+        left: -700px;
+        width: 60vw;
+        height: 100vh;
+
+        padding: map.get($map: spacing.$spacing, $key: 32px);
+        @include utils.flex-layout(flex-start, center, column);
+        gap: map.get($map: spacing.$spacing, $key: 32px);
+        transition: left .3s ease-in-out;
+        padding-top: map.get($map: spacing.$spacing, $key: 70px);
+        z-index: 400;
+
+        &__list {
+            list-style: none;
+            @include utils.flex-layout(center, center, column);
+            gap: map.get($map: spacing.$spacing, $key: 32px);
+        }
+
+
+
+        &__link {
+            @include fonts.font-responsive("text");
+            color: rgb(37, 37, 37);
+            text-decoration: none;
+            transition: all .1s ease-in-out;
+        }
+
+           &__link:hover {
+            color: colors.$main-color;
+           
+        }
+    }
+
+    .nav.open {
+        left: 0;
+        /* Se desliza a la posición visible */
+    }
+
+
+    .ham-menu {
+        width: 30px;
+        height: 20px;
+        @include utils.flex-layout(space-between, stretch, column);
+        cursor: pointer;
+        z-index: 500;
+
+        span {
+            display: block;
+            height: 3px;
+            background-color: colors.$main-color;
+            border-radius: 2px;
+            transition: all .3s ease-in-out;
+        }
+    }
+
+    .ham-menu.open span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .ham-menu.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .ham-menu.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+}
+
+/*Rango mobile EXCLUSIVO*/
+@media screen and (max-width: 767px) {}
+
+/*Rango tablet EXCLUSIVO*/
+@media screen and (min-width: 768px) and (max-width:1023px) {}
+
+/*Rango Tablet INCLUSIVO*/
+
+@media screen and (min-width: 768px) {
+    .header {
+        position: relative;
+        box-shadow: none;
+
+
+        .nav {
+         @include utils.flex-layout(flex-end, center, row);
+        width: auto;
+        height: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0;
+        background: transparent;
+        transition: none;
+        box-shadow: none;
+
+            &__list {
+                list-style: none;
+                @include utils.flex-layout(center, center, row);
+                gap: map.get($map: spacing.$spacing, $key: 16px);
+
+                .nav__item {
+                    list-style: none !important;
+                    cursor: pointer;
+                    @include fonts.font-responsive("text");
+                    color: black;
+
+                }
+            }
+        }
+
+        .ham-menu {
+            display: none;
+        }
+
+    }
+
+
+}
+
+/*Rango Desktop INCLUSIVO*/
+
+@media screen and (min-width: 1024px) {
+  
+}
+
+
+/*Rango Desktop EXCLUSIVO*/
+@media screen and (min-width: 1024px) and (max-width:1247px) {}
+
+/*Rango desktop xl INCLUSIVO*/
+@media screen and (min-width: 1248px) {}

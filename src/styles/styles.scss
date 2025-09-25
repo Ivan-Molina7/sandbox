@@ -1,0 +1,45 @@
+@use "header";
+@use "index";
+@use "animations";
+@use "buttons";
+@use "fonts";
+@use "spacing";
+@use "colors";
+@use "utils";
+@use "footer";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Urbanist', sans-serif;
+    color: colors.$text-color;
+}
+
+
+/*Rango mobile EXCLUSIVO*/
+@media screen and (max-width: 767px) {
+
+}
+
+/*Rango tablet EXCLUSIVO*/
+@media screen and (min-width: 768px) and (max-width:1023px) {
+
+}
+
+/*Rango Tablet INCLUSIVO*/
+
+@media screen and (min-width: 768px) {
+
+}
+
+/*Rango Desktop EXCLUSIVO*/
+@media screen and (min-width: 1024px) and (max-width:1247px) {}
+
+/*Rango desktop xl INCLUSIVO*/
+@media screen and (min-width: 1248px) {}
+

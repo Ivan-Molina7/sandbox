@@ -1,0 +1,82 @@
+@use "sass:map";
+
+$font-family-primary: 'Urbanist',
+serif;
+
+$font-weight-map: (
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+);
+
+$weight-normal: map.get($font-weight-map, normal);
+$weight-medium: map.get($font-weight-map, medium);
+$weight-semibold: map.get($font-weight-map, semibold);
+$weight-bold: map.get($font-weight-map, bold);
+
+
+//? DESKTOP
+$font-styles-desktop: (
+  title-1: (size: 56px, line-height: auto, weight: $weight-bold, font-family: $font-family-primary),
+  title-2: (size: 40px, line-height: auto, weight: $weight-semibold, font-family: $font-family-primary),
+  subtitle: (size: 24px, line-height: auto, weight: $weight-medium, font-family: $font-family-primary),
+  subtitle-xs: (size: 18px, line-height: auto, weight: $weight-semibold, font-family: $font-family-primary),
+  text-base: (size: 16px, line-height: 23px, weight: $weight-medium, font-family: $font-family-primary )
+);
+
+//? TABLET
+$font-styles-tablet: (
+  title-1: (size: 48px, line-height: auto, weight: $weight-bold, font-family: $font-family-primary),
+  title-2: (size: 32px, line-height: auto, weight: $weight-semibold, font-family: $font-family-primary),
+  subtitle: (size: 20px, line-height: auto, weight: $weight-medium, font-family: $font-family-primary),
+  subtitle-xs: (size: 18px, line-height: auto, weight: $weight-semibold, font-family: $font-family-primary),
+  text-base: (size: 16px, line-height: 23px, weight: $weight-medium, font-family: $font-family-primary)
+);
+
+//? MOBILE
+$font-styles-mobile: (
+  title-1: (size: 32px, line-height: auto, weight: $weight-bold, font-family: $font-family-primary),
+  title-2: (size: 24px, line-height: auto, weight: $weight-semibold, font-family: $font-family-primary),
+  subtitle: (size: 18px, line-height: auto, weight: $weight-medium, font-family: $font-family-primary),
+  subtitle-xs: (size: 16px, line-height: auto, weight: $weight-semibold, font-family: $font-family-primary),
+  text-base: (size: 16px, line-height: 23px, weight: $weight-medium, font-family: $font-family-primary,)
+);
+
+
+// Mixin para la fuente responsive con font-family
+@mixin font-responsive($font) {
+    // Desktop
+    $desktop-styles: map.get($font-styles-desktop, $font);
+
+    @if $desktop-styles {
+        font-size: map.get($desktop-styles, size);
+        line-height: map.get($desktop-styles, line-height);
+        font-weight: map.get($desktop-styles, weight);
+        font-family: map.get($desktop-styles, font-family);
+    }
+
+    // Tablet
+    $tablet-styles: map.get($font-styles-tablet, $font);
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        @if $tablet-styles {
+            font-size: map.get($tablet-styles, size);
+            line-height: map.get($tablet-styles, line-height);
+            font-weight: map.get($tablet-styles, weight);
+            font-family: map.get($tablet-styles, font-family);
+        }
+    }
+
+    // Mobile
+    $mobile-styles: map.get($font-styles-mobile, $font);
+
+    @media (max-width: 767px) {
+        @if $mobile-styles {
+            font-size: map.get($mobile-styles, size);
+            line-height: map.get($mobile-styles, line-height);
+            font-weight: map.get($mobile-styles, weight);
+            font-family: map.get($mobile-styles, font-family);
+        }
+    }
+}

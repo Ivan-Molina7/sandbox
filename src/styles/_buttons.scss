@@ -1,0 +1,33 @@
+@use "animations";
+
+@use "fonts";
+@use "spacing";
+@use "utils";
+@use "sass:map";
+@use "colors";
+
+
+.btn{
+    display: flex;
+    width: 120px;
+    border-radius: 50px;
+    @include utils.flex-layout(center, center, row);
+    text-decoration: none;
+    padding: 12px 4px ;
+    background-color: colors.$main-color;
+    color: #fff;
+    @include fonts.font-responsive("text-base");
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color:  colors.$main-color-hover !important;
+}
+
+.btn--email{
+    border-radius: 0 8px 8px 0px;
+    height: 52px;
+}
+
