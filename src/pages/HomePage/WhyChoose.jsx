@@ -28,55 +28,38 @@ function WhyChoose() {
                 </div>
 
                     <ul className="faq-section__list ">
-
-                        <FaqItem
-                        id="faq1"
-                        isOpen={openFaq === 'faq1'}
-                        onToggle={() => toggleFaq('faq1')}
-                        type="faq"
-                        pregunta="Are there any discounts for people in need?"
-
-                        respuesta="Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                condimentum nibh, ut fermentum massa justo sit amet risus.
-                                Cras mattis consectetur purus sit amet fermentum. Praesent
-                                commodo cursus magna, vel."
-                    />
-                    <FaqItem
-                        id="faq2"
-                        isOpen={openFaq === 'faq2'}
-                        onToggle={() => toggleFaq('faq2')}
-                            type="faq"    
-                        pregunta="Are there any discounts for people in need?"
-
-                        respuesta="Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                condimentum nibh, ut fermentum massa justo sit amet risus.
-                                Cras mattis consectetur purus sit amet fermentum. Praesent
-                                commodo cursus magna, vel."
-                    />
-                    <FaqItem
-                        id="faq3"
-                        isOpen={openFaq === 'faq3'}
-                        onToggle={() => toggleFaq('faq3')}
-    type="faq"
-                        pregunta="Are there any discounts for people in need?"
-
-                        respuesta="Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                condimentum nibh, ut fermentum massa justo sit amet risus.
-                                Cras mattis consectetur purus sit amet fermentum. Praesent
-                                commodo cursus magna, vel."
-                    />
-                    <FaqItem
-                        id="faq4"
-                        isOpen={openFaq === 'faq4'}
-                        onToggle={() => toggleFaq('faq4')}
-    type="faq"
-                        pregunta="Are there any discounts for people in need?"
-
-                        respuesta="Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                condimentum nibh, ut fermentum massa justo sit amet risus.
-                                Cras mattis consectetur purus sit amet fermentum. Praesent
-                                commodo cursus magna, vel."
-                    />
+<FaqItem
+  id="faq1"
+  isOpen={openFaq === 'faq1'}
+  onToggle={() => toggleFaq('faq1')}
+  type="faq"
+  pregunta="Are there any discounts available for people in need?"
+  respuesta="Yes, we offer special assistance programs and discounts. Please contact our customer support for more details."
+/>
+<FaqItem
+  id="faq2"
+  isOpen={openFaq === 'faq2'}
+  onToggle={() => toggleFaq('faq2')}
+  type="faq"
+  pregunta="What payment methods do you accept?"
+  respuesta="We accept credit and debit cards, PayPal, and bank transfers to ensure convenient and secure payments."
+/>
+<FaqItem
+  id="faq3"
+  isOpen={openFaq === 'faq3'}
+  onToggle={() => toggleFaq('faq3')}
+  type="faq"
+  pregunta="How can I track the status of my order?"
+  respuesta="Once your order is shipped, you'll receive a tracking number to monitor its progress in real time on our website."
+/>
+<FaqItem
+  id="faq4"
+  isOpen={openFaq === 'faq4'}
+  onToggle={() => toggleFaq('faq4')}
+  type="faq"
+  pregunta="What is your return policy?"
+  respuesta="You can request a return within 30 days of purchase, as long as the item is in its original unopened condition."
+/>
 
 
                     </ul>
