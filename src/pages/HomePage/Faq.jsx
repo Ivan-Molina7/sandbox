@@ -36,43 +36,34 @@ function Faq() {
                         isOpen={openFaq === 'faq1'}
                         onToggle={() => toggleFaq('faq1')}
 
-                        pregunta="Are there any discounts for people in need?"
+                        pregunta="Do you offer discounts for students or seniors?"
 
-                        respuesta="Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                condimentum nibh, ut fermentum massa justo sit amet risus.
-                                Cras mattis consectetur purus sit amet fermentum. Praesent
-                                commodo cursus magna, vel."
+                        respuesta="Yes, we provide special discount programs for students and seniors. Please reach out to our customer support for eligibility details."
                     />
                     <FaqItem
                         id="faq2"
                         isOpen={openFaq === 'faq2'}
                         onToggle={() => toggleFaq('faq2')}
 
-                        pregunta="Are there any discounts for people in need?"
+                        pregunta="What is the estimated delivery time for orders?"
 
-                        respuesta="Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                condimentum nibh, ut fermentum massa justo sit amet risus.
-                                Cras mattis consectetur purus sit amet fermentum. Praesent
-                                commodo cursus magna, vel."
+                        respuesta="Delivery typically takes between 3 to 7 business days depending on your location and shipping method chosen."
                     />
                     <FaqItem
                         id="faq3"
                         isOpen={openFaq === 'faq3'}
                         onToggle={() => toggleFaq('faq3')}
 
-                        pregunta="Are there any discounts for people in need?"
+                        pregunta="How can I update or cancel my order?"
 
-                        respuesta="Fusce dapibus, tellus ac cursus commodo, tortor mauris
-                                condimentum nibh, ut fermentum massa justo sit amet risus.
-                                Cras mattis consectetur purus sit amet fermentum. Praesent
-                                commodo cursus magna, vel."
+                        respuesta="You can update or cancel your order within 2 hours of placing it by contacting our support team directly."
                     />
                     <FaqItem
                         id="faq4"
                         isOpen={openFaq === 'faq4'}
                         onToggle={() => toggleFaq('faq4')}
 
-                        pregunta="Are there any discounts for people in need?"
+                        pregunta="What should I do if I receive a damaged or incorrect item?"
 
                         respuesta="Fusce dapibus, tellus ac cursus commodo, tortor mauris
                                 condimentum nibh, ut fermentum massa justo sit amet risus.
